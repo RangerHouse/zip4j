@@ -16,18 +16,14 @@
 
 package net.lingala.zip4j.util;
 
-import java.io.File;
-import java.io.UnsupportedEncodingException;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
-import java.util.TimeZone;
-
 import net.lingala.zip4j.exception.ZipException;
 import net.lingala.zip4j.model.FileHeader;
 import net.lingala.zip4j.model.ZipModel;
+
+import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.nio.ByteBuffer;
+import java.util.*;
 
 public class Zip4jUtil {
 	
@@ -687,7 +683,7 @@ public class Zip4jUtil {
 					retList.add(zipModel.getZipFile());
 				} else {
 					String fileExt = ".z0";
-					if (i > 9) {
+					if (i >= 9) {
 						fileExt = ".z";
 					}
 					partFile = (zipFileName.indexOf(".") >= 0) ? currZipFile.substring(0, currZipFile.lastIndexOf(".")) : currZipFile;
